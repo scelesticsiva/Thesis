@@ -22,14 +22,6 @@ class data_generator(object):
         self.y = np.array(pd.DataFrame(load_boston().target))[0:data_points,:]
         self.x_test = np.array(pd.DataFrame(load_boston().data))[data_points:data_points+100,:]
         self.y_test = np.array(pd.DataFrame(load_boston().target))[data_points:data_points+100,:]
-        #self.x = np.sin(np.linspace(0,2*np.pi,100))
-        #self.y = np.random.normal(self.x,0.5)
-        #self.x,self.y = make_moons(data_points,noise = 0.1)
-        #self.y = np.reshape(self.y,(self.y.shape[0],1))
-        #plt.scatter(self.x[:,0],self.x[:,1],s = 40,c = self.y)
-        
-        #plt.scatter(np.arange(len(self.x)),self.y,c = "r",edgecolor = "r")
-        #plt.show()
         
     def data_set_generator(self,batch_size):
         """
@@ -352,70 +344,3 @@ plt.show()
 plt.plot(np.arange(EPOCH),np.array(hidden_units_list))
 plt.xlabel("epochs")
 plt.ylabel("no of hidden units")
-#print(np.mean((np.array(result) - np.array(ground_truth))**2))
-#print((np.array(result) - np.array(ground_truth)))
-#print(nn_testing.w1)
-#print(nn_testing.w2)
-
-#hyperparameters
-#input_dim = 784
-#hidden_nodes = 900
-#output_dim = 10
-#batch_size = 1
-#learning_rate = 0.01
-#train_dataset_size = 400
-#test_dataset_size = 100
-#THRESHOLD = 0.1
-#ERROR_THRESHOLD = 1
-#
-##class objects for the neural network and the data generator
-##nn = neural_network(input_dim,hidden_nodes,output_dim,batch_size)
-#train_data = mnist.train
-#test_data = mnist.test
-#
-##variables
-#loss_prev = 0
-#test_loss_list = []
-#hidden_units_list = []
-#result = []
-#
-##normal training
-#EPOCH = 20
-#
-#
-#current_error_list =  []
-#test_error_list= []
-#
-#nn_testing = neural_network(input_dim,hidden_nodes,output_dim,batch_size)
-#prev_error = 9999999
-#optimize_with_mask = False
-##testing implementation
-#for epoch in range(EPOCH):
-#    current_error = 0
-#    train_loss_list = []
-#    ground_truth = []
-#    for i in range(int(5000/batch_size)):
-#        data = train_data.next_batch(batch_size)
-#        nn_testing.feed_forward(data[0],data[1])
-#        nn_testing.back_prop();
-#        nn_testing.optimize(learning_rate)
-#        prediction = np.argmax(nn_testing.input_w2,axis = 1)
-#        accuracy = np.mean(np.equal(prediction,np.argmax(data[1],axis = 1)))
-#        ground_truth.append(accuracy)
-#        train_loss_list.append(np.sum(nn_testing.loss)/batch_size)
-#    print("train:",np.mean(np.array(ground_truth)))
-#    print("train_loss:",np.mean(np.array(train_loss_list)))
-#    #test_accuracy_list = []
-#    #for i in range(int(10000/batch_size)):
-#    #    test_ = test_data.next_batch(batch_size)
-#    #    nn_testing.feed_forward(test_[0],test_[1])
-#    #    test_accuracy_list.append(np.mean(np.equal(np.argmax(nn_testing.input_w2,axis = 1),np.argmax(test_[1],axis = 1))))
-#        #if i == 2000:
-#        #    plt.imshow(np.reshape(test_[0],(28,28)))
-#        #    print(np.argmax(nn_testing.input_w2,axis = 1))
-#    #print("test:",np.mean(np.array(test_accuracy_list)))
-#            #print(accuracy)
-#            #print(nn_testing.d_error)
-#    #print(np.mean(np.array(train_loss_list)))
-#    #print(train_loss_list)
-    
